@@ -35,3 +35,8 @@ end
 execute 'fix_template' do
   command 'sudo chmod go-w /etc/logstash/conf.d/logstash.conf'
 end
+
+service 'logstash' do
+  supports status: true, restart: true, reload: true
+  action [:enable, :start]
+end

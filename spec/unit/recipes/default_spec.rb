@@ -19,6 +19,9 @@ describe 'logstash_cookbook::default' do
     it 'should install openjdk-8-jdk' do
        expect(chef_run).to install_package "openjdk-8-jdk"
      end
+     it 'should run logstash' do
+       expect(chef_run).to enable_service 'logstash'
+    end
 
     it 'should update the source list' do
       expect(chef_run).to update_apt_update('update')

@@ -26,3 +26,7 @@ end
 describe package('openjdk-8-jdk') do
   it { should be_installed }
 end
+
+describe service "logstash" do
+  it { should be_enabled}
+end
